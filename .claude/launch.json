@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fioravanti",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4173", "-d", "/Users/roberto.cacaci/fioravanti-site"],
+      "port": 4173
+    }
+  ]
+}

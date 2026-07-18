@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIORAVANTI — Simple. Beautiful. Meaningful. Always.</title>
+<meta name="description" content="Fioravanti. Il coraggio della semplicità. La ricerca continua.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav-mark" href="#hero" aria-label="Fioravanti — home">
+    <svg class="mark" viewBox="0 0 64 40" aria-hidden="true">
+      <path d="M10 30 L28 30 L28 24 L16 24 L16 18 L40 18" fill="none" stroke="currentColor" stroke-width="4"/>
+      <path d="M24 10 L54 10 L54 16 L34 16" fill="none" stroke="currentColor" stroke-width="4"/>
+    </svg>
+    <span class="nav-word">FIORAVANTI</span>
+  </a>
+  <nav class="nav-links" aria-label="principale">
+    <a href="#eredita">Eredità</a>
+    <a href="#ricerca">Ricerca</a>
+    <a href="#film">Film</a>
+    <a class="nav-ig" href="https://www.instagram.com/fioravanti.it/" target="_blank" rel="noopener">@fioravanti.it</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <canvas id="studio" aria-hidden="true"></canvas>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <p class="hero-kicker mono">CARROZZERIA · DESIGN · RICERCA</p>
+    <h1 class="hero-title">
+      <span class="line"><span>FIORA</span></span><span class="line"><span>VANTI</span></span>
+    </h1>
+    <p class="hero-sub garamond">Simple. Beautiful. Meaningful. <em>Always.</em></p>
+  </div>
+  <div class="hero-spec mono" aria-hidden="true">
+    <div class="spec-row"><span>CODE NAME</span><b>PROGETTO FIORAVANTI</b></div>
+    <div class="spec-row"><span>PHASE</span><b>LAUNCH</b></div>
+    <div class="spec-row"><span>N. PROJ</span><b>01</b></div>
+    <div class="spec-row"><span>APPROVED</span><b class="sign">ƒ</b></div>
+  </div>
+  <a class="scroll-cue" href="#nipoti"><span class="mono">SCROLL</span><i></i></a>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="quote paper" id="nipoti">
+  <div class="quote-inner reveal">
+    <p class="quote-open" aria-hidden="true">«</p>
+    <blockquote class="garamond">
+      <strong>Ai miei nove nipoti,</strong><br>
+      con l’augurio che nella vita<br>
+      si innamorino di una persona<br>
+      e di un pensiero».
+    </blockquote>
+    <p class="quote-en mono">To my nine grandchildren, with the hope that in life they fall in love with a person and with an idea.</p>
+  </div>
+</section>
+
+<!-- ============ HERITAGE TIMELINE ============ -->
+<section class="heritage paper" id="eredita">
+  <div class="heritage-head">
+    <h2 class="display">L’EREDITÀ</h2>
+    <p class="garamond heritage-lede">Ci siamo innamorati di un’idea. I prodotti hanno sempre parlato da soli — da qui in avanti, la nostra missione è farli finalmente ascoltare, a modo nostro.</p>
+  </div>
+  <div class="rail-wrap">
+    <div class="rail" id="rail">
+      <article class="era" data-img="era-ferrari.jpg">
+        <div class="era-media"><div class="ph ph-1"><span class="mono">ARCHIVIO · 01</span></div></div>
+        <p class="era-year display">1968</p>
+        <h3>Gli anni delle icone</h3>
+        <p class="garamond">Dalla matita di Leonardo Fioravanti prendono forma linee che definiscono un’epoca del design italiano.</p>
+      </article>
+      <article class="era" data-img="era-concept.jpg">
+        <div class="era-media"><div class="ph ph-2"><span class="mono">ARCHIVIO · 02</span></div></div>
+        <p class="era-year display">1991</p>
+        <h3>La ricerca indipendente</h3>
+        <p class="garamond">Nasce Fioravanti. Prototipi, brevetti, visioni: la libertà di disegnare il futuro senza compromessi.</p>
+      </article>
+      <article class="era" data-img="era-dino.jpg">
+        <div class="era-media"><div class="ph ph-3"><span class="mono">ARCHIVIO · 03</span></div></div>
+        <p class="era-year display">2009</p>
+        <h3>Ricerca Dino</h3>
+        <p class="garamond">Un omaggio a un nome leggendario. Fogli, pennarelli, proporzioni: il mestiere allo stato puro.</p>
+      </article>
+      <article class="era" data-img="era-lf1.jpg">
+        <div class="era-media"><div class="ph ph-4"><span class="mono">ARCHIVIO · 04</span></div></div>
+        <p class="era-year display">OGGI</p>
+        <h3>La nuova generazione</h3>
+        <p class="garamond">Il nome torna in pista. Una nuova generazione riporta l’idea dove è nata: sull’asfalto.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKETCH ============ -->
+<section class="sketch paper" id="ricerca">
+  <div class="sketch-head">
+    <h2 class="display">LA RICERCA</h2>
+    <p class="mono sketch-note">3/4 FRONT · SIDE · TEORICO</p>
+  </div>
+  <div class="sketch-stage">
+    <svg id="carSketch" viewBox="0 0 1200 420" fill="none" aria-label="Schizzo di una berlinetta che si disegna da solo">
+      <!-- body silhouette -->
+      <path class="stroke s-body" d="M60 330 C120 328 150 322 190 318 C230 250 300 208 420 196 C540 184 660 150 760 148 C860 146 960 170 1020 210 C1070 244 1120 300 1140 318 C1150 326 1145 332 1120 332"/>
+      <!-- lower body / rocker -->
+      <path class="stroke s-lower" d="M120 332 C300 338 900 338 1110 332"/>
+      <!-- greenhouse -->
+      <path class="stroke s-glass" d="M470 196 C540 148 640 128 720 132 C790 136 840 152 880 176"/>
+      <path class="stroke s-glass" d="M700 134 L710 196"/>
+      <!-- bonnet cut + details -->
+      <path class="stroke s-detail" d="M200 312 C260 262 330 228 430 214"/>
+      <path class="stroke s-detail" d="M930 190 C980 208 1030 246 1060 282"/>
+      <path class="stroke s-detail" d="M420 240 L640 226"/>
+      <!-- wheels -->
+      <circle class="stroke s-wheel" cx="300" cy="322" r="62"/>
+      <circle class="stroke s-wheel" cx="300" cy="322" r="34"/>
+      <circle class="stroke s-wheel" cx="940" cy="322" r="62"/>
+      <circle class="stroke s-wheel" cx="940" cy="322" r="34"/>
+      <!-- ground -->
+      <path class="stroke s-ground" d="M40 396 L1160 396"/>
+      <!-- annotations -->
+      <g class="anno mono">
+        <text x="150" y="150">vetro o copertura piena →</text>
+        <text x="880" y="120">fiancata stretta</text>
+        <text x="960" y="392" class="anno-small">gomma · pirelli</text>
+      </g>
+    </svg>
+    <p class="sketch-caption garamond reveal">Ogni progetto comincia così: una linea sola, il coraggio di non aggiungerne troppe.</p>
+  </div>
+</section>
+
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto dark" id="manifesto">
+  <p class="mono manifesto-k">MANIFESTO</p>
+  <h2 class="manifesto-line" id="mline">
+    <span class="mword">IL</span>
+    <span class="mword">CORAGGIO</span>
+    <span class="mword">DELLA</span>
+    <span class="mword">SEMPLICITÀ</span>
+  </h2>
+  <p class="manifesto-sub garamond reveal">Beauty and Simplicity are two values that complete each other.<br>Together, they form a key reference in Fioravanti’s thinking.</p>
+</section>
+
+<!-- ============ FILM ============ -->
+<section class="film dark" id="film">
+  <div class="film-head">
+    <h2 class="display">IL FILM</h2>
+    <p class="mono">DALLA COLLINA · DAL GARAGE · DALLA PISTA</p>
+  </div>
+  <div class="film-frame reveal" id="filmFrame">
+    <div class="film-poster" id="filmPoster">
+      <svg class="mark mark-big" viewBox="0 0 64 40" aria-hidden="true">
+        <path d="M10 30 L28 30 L28 24 L16 24 L16 18 L40 18" fill="none" stroke="currentColor" stroke-width="4"/>
+        <path d="M24 10 L54 10 L54 16 L34 16" fill="none" stroke="currentColor" stroke-width="4"/>
+      </svg>
+      <p class="mono">FILM IN ARRIVO — assets/film.mp4</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot" id="contatti">
+  <svg class="mark mark-foot" viewBox="0 0 64 40" aria-hidden="true">
+    <path d="M10 30 L28 30 L28 24 L16 24 L16 18 L40 18" fill="none" stroke="currentColor" stroke-width="4"/>
+    <path d="M24 10 L54 10 L54 16 L34 16" fill="none" stroke="currentColor" stroke-width="4"/>
+  </svg>
+  <p class="foot-word display">FIORAVANTI</p>
+  <p class="garamond foot-line">Simple. Beautiful. Meaningful. Always.</p>
+  <a class="foot-ig mono" href="https://www.instagram.com/fioravanti.it/" target="_blank" rel="noopener">SEGUI @FIORAVANTI.IT ↗</a>
+  <p class="mono foot-fine">© Fioravanti — bozza di studio, non pubblicata</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
