@@ -1,6 +1,6 @@
 # feat: Higgsfield motion assets for fioravanti-site
 
-**Status:** blocked on Higgsfield MCP connection (not visible in current session — connect via claude.ai connectors or `claude mcp add`, then execute).
+**Status:** **G1 DONE 2026-07-26** — rendered on Kling v3.0 via Higgsfield MCP, QC'd, encoded and live in `assets/hero-loop.{mp4,webm}` (render log in `assets/motion/G1-hero-loop.md`). G2–G6 still to run; Higgsfield MCP is connected now, 84 credits left after G1 (14 credits per 8 s pro clip).
 **Visual thesis (unchanged):** paper/ink editorial + dark carbon studio; motion must feel like archive footage and studio light, never "AI slop".
 
 ## Generation queue (ordered by wow-per-megabyte)

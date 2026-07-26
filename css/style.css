@@ -78,6 +78,15 @@ a:focus-visible, button:focus-visible {
 section, footer { position: relative; background-clip: padding-box; }
 .quote, .heritage, .sketch { z-index: 2; }
 #studio { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* G1 motion layer — blended over the WebGL studio, under veil + copy */
+/* No z-index on purpose: DOM order puts it above the canvas, below veil + copy. */
+.hero-motion {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none;
+  mix-blend-mode: screen; opacity: .85;
+}
+.hero-motion.solo { mix-blend-mode: normal; opacity: 1; }
+.hero:has(.hero-motion.solo) #studio { display: none; }
 .hero-veil {
   position: absolute; inset: 0; pointer-events: none;
   background:

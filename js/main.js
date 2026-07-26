@@ -212,6 +212,34 @@ document.querySelectorAll(".era[data-img]").forEach((era) => {
   img.src = file;
 });
 
+/* Hero G1: blend the studio loop over the WebGL canvas if assets/hero-loop.mp4 exists.
+   No file -> hero stays pure WebGL. Reduced motion -> never injected. */
+if (!reduceMotion) {
+  fetch("assets/hero-loop.mp4", { method: "HEAD" }).then((r) => {
+    if (!r.ok) return;
+    const hero = document.getElementById("hero");
+    const v = document.createElement("video");
+    v.className = "hero-motion";
+    v.poster = "assets/hidra-light.jpg";
+    v.muted = true;
+    v.loop = true;
+    v.autoplay = true;
+    v.playsInline = true;
+    v.preload = "auto";
+    v.setAttribute("aria-hidden", "true");
+    for (const [src, type] of [["assets/hero-loop.webm", "video/webm"], ["assets/hero-loop.mp4", "video/mp4"]]) {
+      const s = document.createElement("source");
+      s.src = src;
+      s.type = type;
+      v.appendChild(s);
+    }
+    // No canvas (WebGL failed) or narrow viewport: the loop IS the hero background.
+    const solo = !document.getElementById("studio") || window.matchMedia("(max-width: 720px)").matches;
+    if (solo) v.classList.add("solo");
+    hero.insertBefore(v, hero.querySelector(".hero-veil"));
+  }).catch(() => {});
+}
+
 /* Film: swap poster for video if assets/film.mp4 exists */
 fetch("assets/film.mp4", { method: "HEAD" }).then((r) => {
   if (!r.ok) return;
