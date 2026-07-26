@@ -307,8 +307,9 @@ document.querySelectorAll(".reveal").forEach((el) => {
 document.querySelectorAll(".era[data-img]").forEach((era) => {
   const file = "assets/" + era.dataset.img;
   const slot = era.dataset.img.replace(/\.[a-z]+$/i, "");
+  // Not loading="lazy": this Image is detached until it loads, and a detached lazy
+  // image never loads, so onload would never fire and the placeholder would stay.
   const img = new Image();
-  img.loading = "lazy";
   img.decoding = "async";
   img.onload = () => {
     const media = era.querySelector(".era-media");
