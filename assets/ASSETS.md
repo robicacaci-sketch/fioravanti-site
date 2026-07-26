@@ -17,9 +17,23 @@ Formato consigliato: JPG ~1600px lato lungo. Video: MP4 H.264.
 
 Se ci sono, il sito li usa da solo; se mancano, resta tutto come adesso.
 
-| File            | Contenuto                                                  |
-|-----------------|------------------------------------------------------------|
-| hero-loop.mp4   | Loop 6–8s del cofano con la lama di luce — sfondo dell'apertura |
-| hero-loop.webm  | Stessa clip in WebM (per Chrome/Firefox, più leggera)      |
+Ogni riga vuole **due file**, `.mp4` e `.webm` (li produce `motion/encode.sh` in un colpo solo).
+Il sito li carica solo quando stanno per entrare nello schermo, e mai se il browser
+chiede "meno animazioni".
 
-Specifiche e prompt: `motion/G1-hero-loop.md`. Conversione: `bash motion/encode.sh <file>`.
+| File                    | Dove finisce                                               |
+|-------------------------|------------------------------------------------------------|
+| hero-loop.*             | Loop 6–8s del cofano con la lama di luce — sfondo dell'apertura |
+| manifesto-loop.*        | Fondo scuro in carbonio dietro "IL CORAGGIO DELLA SEMPLICITÀ" |
+| sketch-loop.*           | Fondo carta dietro il disegno che si costruisce (LA RICERCA) |
+| era-ferrari-loop.*      | Cinemagraph sulla prima card della timeline                |
+| era-concept-loop.*      | Cinemagraph sulla seconda card                             |
+| era-dino-loop.*         | Cinemagraph sulla terza card                               |
+| era-lf1-loop.*          | Cinemagraph sulla quarta card                              |
+| film-poster.jpg         | Fermo immagine mostrato prima di far partire il film       |
+
+Le card della timeline (`era-*`) ritraggono persone reali: prima di pubblicarle animate
+serve l'ok dell'amico — vedi il piano `docs/plans/2026-07-19-001`.
+
+Specifiche e prompt: `motion/G1-hero-loop.md`. Conversione: `bash motion/encode.sh <file> [nome]`,
+per esempio `bash motion/encode.sh ~/Downloads/render.mp4 manifesto-loop`.

@@ -16,12 +16,14 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* No scroll-behavior: smooth — it fights ScrollTrigger's pinned heritage rail
+   (GSAP resolves positions mid-flight and the pin stutters). */
 body {
   font-family: var(--f-sans);
   background: var(--paper);
   color: var(--ink);
-  overflow-x: hidden;
+  overflow-x: clip;                  /* clip, not hidden: hidden makes body a scroll
+                                        container and breaks pinning in Safari */
 }
 body::after { /* paper grain */
   content: "";
@@ -87,6 +89,17 @@ section, footer { position: relative; background-clip: padding-box; }
 }
 .hero-motion.solo { mix-blend-mode: normal; opacity: 1; }
 .hero:has(.hero-motion.solo) #studio { display: none; }
+
+/* Motion slots — G2 cinemagraphs, G3 sketch bed, G5 manifesto bed.
+   Each sits behind its own content and is only ever added by js/main.js when the
+   clip is actually in assets/, so these rules are inert until then. */
+.era-motion, .sketch-motion, .manifesto-motion {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none; display: block;
+}
+.era-motion { z-index: 1; }                      /* covers the still inside the card */
+.sketch-motion { opacity: .28; mix-blend-mode: multiply; }
+.manifesto-motion { opacity: .4; mix-blend-mode: screen; }
 .hero-veil {
   position: absolute; inset: 0; pointer-events: none;
   background:
@@ -164,6 +177,7 @@ section, footer { position: relative; background-clip: padding-box; }
 }
 .era { width: min(56vw, 460px); flex-shrink: 0; }
 .era-media {
+  position: relative;
   aspect-ratio: 4 / 3; overflow: hidden; margin-bottom: 1.6rem;
   clip-path: inset(0 100% 0 0); background: var(--paper-deep);
 }
@@ -186,8 +200,8 @@ section, footer { position: relative; background-clip: padding-box; }
 .sketch-head { padding: 0 2rem; max-width: 1200px; margin: 0 auto 2rem; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .sketch-head h2 { font-size: clamp(2.2rem, 6vw, 4.5rem); }
 .sketch-note { color: var(--ink-soft); }
-.sketch-stage { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-#carSketch { width: 100%; height: auto; }
+.sketch-stage { position: relative; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+#carSketch { position: relative; z-index: 1; width: 100%; height: auto; }
 .stroke {
   stroke: #3a3550; stroke-width: 2.4; stroke-linecap: round; fill: none;
 }
@@ -200,10 +214,12 @@ section, footer { position: relative; background-clip: padding-box; }
 
 /* ================= MANIFESTO ================= */
 .manifesto {
+  position: relative; overflow: hidden;
   min-height: 90vh; display: flex; flex-direction: column;
   justify-content: center; align-items: center; text-align: center;
   padding: 16vh 2rem; gap: 2.4rem;
 }
+.manifesto > :not(.manifesto-motion) { position: relative; z-index: 1; }
 .manifesto-k { color: rgba(245,244,241,.4); }
 .manifesto-line {
   font-family: var(--f-sans); font-weight: 400;
