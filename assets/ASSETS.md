@@ -32,8 +32,9 @@ chiede "meno animazioni".
 | era-lf1-loop.*          | Cinemagraph sulla quarta card                              |
 | film-poster.jpg         | Fermo immagine mostrato prima di far partire il film       |
 
-Le card della timeline (`era-*`) ritraggono persone reali: prima di pubblicarle animate
-serve l'ok dell'amico — vedi il piano `docs/plans/2026-07-19-001`.
+`era-ferrari` e `era-concept` ritraggono **persone reali**: prima di pubblicarle animate
+serve l'ok dell'amico — vedi il piano `docs/plans/2026-07-19-001`. `era-dino` (tavola
+stampata) e `era-lf1` (auto sulla collina) non ritraggono nessuno e sono già animate.
 
 Specifiche e prompt: `motion/G1-hero-loop.md`. Conversione: `bash motion/encode.sh <file> [nome]`,
 per esempio `bash motion/encode.sh ~/Downloads/render.mp4 manifesto-loop`.

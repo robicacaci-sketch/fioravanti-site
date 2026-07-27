@@ -1,9 +1,25 @@
 # feat: Higgsfield motion assets for fioravanti-site
 
-**Status 2026-07-26:** **G1, G3 and G5 DONE** — all three rendered on Kling v3.0 through the
-Higgsfield MCP, QC'd, dual-encoded and live in `assets/`. G2 is deliberately still open (it
-needs the friend's sign-off — those are photographs of real people). G4/G6 not started.
-~67 credits left; 8 s pro clip = 14 credits, 5 s = 8.75.
+**Status 2026-07-27:** **G1, G3, G5 DONE**, plus **G4 (`era-lf1-loop`) and the `era-dino-loop`
+card** — all rendered on Kling v3.0 through the Higgsfield MCP, QC'd, dual-encoded and in
+`assets/`. **G2 remains open by design:** `era-ferrari` and `era-concept` are the two era
+photographs that actually contain identifiable people, and they still need the friend's
+sign-off. `era-dino` (a printed 2009 board) and `era-lf1` (car on a terrace) contain no
+people, so the consent gate never applied to them. G6 dropped — the 9:16 work went to a
+standalone reel instead. 44.3 credits left; **5 s std clip now costs 10 credits** (was 8.75).
+
+> **The loop recipe did NOT hold on this run.** Passing the same media id as both
+> `start_image` and `end_image` produced clips that never converge back to frame 1:
+> measured seam ≈ total motion (0.72 and 0.64 on a grain-averaged 64 px MAD), i.e. a visible
+> jump every restart. Fix applied, costs nothing: **palindrome the clip** — forward frames
+> `1..N` then `N-1..2`, so the loop point is a single-frame step. Seam fell to **0.19 / 0.18**,
+> tighter than G1/G3/G5. Do this at encode time for any future clip rather than paying to
+> re-roll the render. Note the bundled Remotion ffmpeg has no `reverse` filter, so the
+> palindrome is built by renumbering extracted PNGs.
+>
+> Also: `aspect_ratio: "3:4"` is silently coerced to `9:16` ("closest supported"), but the
+> output still conforms to the source image (856×1072, 828×1108) — so pass the source and
+> ignore the coercion warning.
 
 | Step | Files | Render |
 |---|---|---|
